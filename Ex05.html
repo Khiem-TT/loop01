@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex05</title>
+</head>
+<body>
+<script>
+    let a = 0;
+    let b = 1;
+    document.write(a + '<br>');
+    document.write(b + '<br>');
+    let temp;
+    let input = +prompt('Nhập n số Fibonaci cần in: ', '20');
+    let sum = a + b;
+    for (let i = 0; i < input - 2; i++) {
+        temp = a + b;
+        sum += temp;
+        a = b;
+        b = temp;
+        document.write(temp + '<br>');
+    }
+    document.write(`Tổng 20 số Fibonaci đầu tiên là: ${sum}`);
+</script>
+</body>
+</html>

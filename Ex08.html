@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex08</title>
+</head>
+<body>
+<button onclick="play()">Chơi</button>
+<script>
+    function play() {
+        let num = +prompt('Nhập n, bạn sẽ đoán từ khoảng 0 đến n: ');
+        let numRan = Math.floor(Math.random() * (num + 1));
+        console.log(numRan);
+        let numCheck = +prompt('Nhập số bạn đoán: ');
+        let count = 0;
+        while (numCheck !== numRan) {
+            count++;
+            if (count === 3) {
+                alert('Bạn hết số lần đoán');
+                break;
+            } else if (numCheck < numRan) {
+                alert('Số bạn đoán nhỏ hơn');
+            } else if (numCheck > numRan) {
+                alert('Số bạn đoán lớn hơn')
+            }
+            numCheck = +prompt('Nhập số bạn đoán: ');
+        }
+        if (numCheck === numRan) {
+            alert('Chúc mừng bạn đã đoán đúng!');
+        }
+    }
+</script>
+</body>
+</html>
